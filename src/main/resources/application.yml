@@ -1,0 +1,12 @@
+logging:
+  file:
+    # 相对路径：在当前项目根目录下自动生成 logs 文件夹存放日志
+    name: logs/app.log
+  logback:
+    rollingpolicy:
+      file-name-pattern: logs/app-%d{yyyy-MM-dd}.%i.log
+      max-file-size: 100MB
+      max-history: 30
+
+      # 所有历史日志文件占用的最大总容量（达到这个阈值也会触发旧日志清理）
+      total-size-cap: 5GB
