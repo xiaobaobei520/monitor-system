@@ -10,3 +10,17 @@ logging:
 
       # 所有历史日志文件占用的最大总容量（达到这个阈值也会触发旧日志清理）
       total-size-cap: 5GB
+
+  spring:
+    datasource:
+      # 替换成你真实的 MySQL IP 和端口。
+      # 这里默认连接名为 monitor_db 的数据库，并配置了上海时区防乱码
+      url: jdbc:mysql://127.0.0.1:3306/monitor_db?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+      username: root
+      password: your_password # ⚠️ 注意：这里一定要改成你本地 MySQL 真实的 root 密码
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+  mybatis-plus:
+    configuration:
+      # 运维排错利器：把 Java 到底在底层跑了什么 SQL，原封不动地打印在控制台上
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

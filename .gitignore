@@ -31,3 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### macOS ###
+.DS_Store
+
+### 应用运行日志 ###
+logs/
